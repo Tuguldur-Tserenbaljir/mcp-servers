@@ -6,27 +6,7 @@ to community built servers and additional resources.
 The servers in this repository showcase the versatility and extensibility of MCP, demonstrating how it can be used to give Large Language Models (LLMs) secure, controlled access to tools and data sources.
 Each MCP server is implemented with either the [Typescript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk) or [Python MCP SDK](https://github.com/modelcontextprotocol/python-sdk).
 
-## 🌟 Reference Servers
 
-These servers aim to demonstrate MCP features and the Typescript and Python SDK.
-
-- **[AWS KB Retrieval](src/aws-kb-retrieval)** - Retrieval from AWS Knowledge Base using Bedrock Agent Runtime
-- **[Brave Search](src/brave-search)** - Web and local search using Brave's Search API
-- **[EverArt](src/everart)** - AI image generation using various models
-- **[Fetch](src/fetch)** - Web content fetching and conversion for efficient LLM usage
-- **[Filesystem](src/filesystem)** - Secure file operations with configurable access controls
-- **[Git](src/git)** - Tools to read, search, and manipulate Git repositories
-- **[GitHub](src/github)** - Repository management, file operations, and GitHub API integration
-- **[GitLab](src/gitlab)** - GitLab API, enabling project management
-- **[Google Drive](src/gdrive)** - File access and search capabilities for Google Drive
-- **[Google Maps](src/google-maps)** - Location services, directions, and place details
-- **[Memory](src/memory)** - Knowledge graph-based persistent memory system
-- **[PostgreSQL](src/postgres)** - Read-only database access with schema inspection
-- **[Puppeteer](src/puppeteer)** - Browser automation and web scraping
-- **[Sentry](src/sentry)** - Retrieving and analyzing issues from Sentry.io
-- **[Sequential Thinking](src/sequentialthinking)** - Dynamic and reflective problem-solving through thought sequences
-- **[Slack](src/slack)** - Channel management and messaging capabilities
-- **[Sqlite](src/sqlite)** - Database interaction and business intelligence capabilities
 
 ## 🤝 Third-Party Servers
 
@@ -43,27 +23,6 @@ Official integrations are maintained by companies building production ready MCP 
 - <img height="12" width="12" src="https://pics.fatwang2.com/56912e614b35093426c515860f9f2234.svg" /> [Search1API](https://github.com/fatwang2/search1api-mcp) - One API for Search, Crawling, and Sitemaps
 - <img height="12" width="12" src="https://qdrant.tech/img/brand-resources-logos/logomark.svg" /> **[Qdrant](https://github.com/qdrant/mcp-server-qdrant/)** - Implement semantic memory layer on top of the Qdrant vector search engine
 
-### 🌎 Community Servers
-
-A growing set of community-developed and maintained servers demonstrates various applications of MCP across different domains.
-
-> **Note:** Community servers are **untested** and should be used at **your own risk**. They are not affiliated with or endorsed by Anthropic.
-
-- **[MCP Installer](https://github.com/anaisbetts/mcp-installer)** - This server is a server that installs other MCP servers for you.
-- **[Spotify MCP](https://github.com/varunneal/spotify-mcp)** - This MCP allows an LLM to play and use Spotify. 
-- **[Inoyu](https://github.com/sergehuber/inoyu-mcp-unomi-server)** - Interact with an Apache Unomi CDP customer data platform to retrieve and update customer profiles
-- **[MySQL](https://github.com/designcomputer/mysql_mcp_server)** - MySQL database integration with configurable access controls and schema inspection
-- **[BigQuery](https://github.com/LucasHild/mcp-server-bigquery)** (by LucasHild) - This server enables LLMs to inspect database schemas and execute queries on BigQuery.
-- **[BigQuery](https://github.com/ergut/mcp-bigquery-server)** (by ergut) - Server implementation for Google BigQuery integration that enables direct BigQuery database access and querying capabilities
-- **[Todoist](https://github.com/abhiz123/todoist-mcp-server)** - Interact with Todoist to manage your tasks.
-- **[Tavily search](https://github.com/RamXX/mcp-tavily")** - An MCP server for Tavily's search & news API, with explicit site inclusions/exclusions
-- **[Linear](https://github.com/jerhadf/linear-mcp-server)** - Allows LLM to interact with Linear's API for project management, including searching, creating, and updating issues.
-- **[Playwright MCP](https://github.com/executeautomation/mcp-playwright)** - This MCP Server will help you run browser automation and webscraping using Playwright
-- **[AWS](https://github.com/rishikavikondala/mcp-server-aws)** - Perform operations on your AWS resources using an LLM
-- **[LlamaCloud](https://github.com/run-llama/mcp-server-llamacloud)** (by marcusschiesser) - Integrate the data stored in a managed index on [LlamaCloud](https://cloud.llamaindex.ai/)
-- **[Any Chat Completions](https://github.com/pyroprompts/any-chat-completions-mcp)** - Interact with any OpenAI SDK Compatible Chat Completions API like OpenAI, Perplexity, Groq, xAI and many more.
-- **[Windows CLI](https://github.com/SimonB97/win-cli-mcp-server)** - MCP server for secure command-line interactions on Windows systems, enabling controlled access to PowerShell, CMD, and Git Bash shells.
-- **[OpenRPC](https://github.com/shanejonas/openrpc-mpc-server)** - Interact with and discover JSON-RPC APIs via [OpenRPC](https://open-rpc.org).
 
 ## 📚 Resources
 
@@ -98,48 +57,6 @@ python -m mcp_server_git
 ```
 
 Follow [these](https://docs.astral.sh/uv/getting-started/installation/) instructions to install `uv` / `uvx` and [these](https://pip.pypa.io/en/stable/installation/) to install `pip`.
-
-### Using an MCP Client
-However, running a server on its own isn't very useful, and should instead be configured into an MCP client. For example, here's the Claude Desktop configuration to use the above server:
-
-```json
-{
-  "mcpServers": {
-    "memory": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"]
-    }
-  }
-}
-```
-
-Additional examples of using the Claude Desktop as an MCP client might look like:
-
-```json
-{
-  "mcpServers": {
-    "filesystem": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/allowed/files"]
-    },
-    "git": {
-      "command": "uvx",
-      "args": ["mcp-server-git", "--repository", "path/to/git/repo"]
-    },
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"
-      }
-    },
-    "postgres": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://localhost/mydb"]
-    }
-  }
-}
-```
 
 ## 🛠️ Creating Your Own Server
 
