@@ -25,7 +25,7 @@ def load_minio_config():
           "command": "...",
           "args": [...],
           "minioConfig": {
-            "serverUrl": "192.168.68.50:9000",
+            "serverUrl": "",
             "accessKey": "your_access_key",
             "secretKey": "your_secret_key",
             "secure": false
