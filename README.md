@@ -1,87 +1,48 @@
-# Model Context Protocol servers
+# Model Context Protocol (MCP) Servers
 
-This repository is a collection of *reference implementations* for the [Model Context Protocol](https://modelcontextprotocol.io/) (MCP), as well as references
-to community built servers and additional resources.
+Welcome to the **Model Context Protocol (MCP) Servers** repository! This project enables you to leverage and extend the power of MCP by creating and managing your own servers.
 
-The servers in this repository showcase the versatility and extensibility of MCP, demonstrating how it can be used to give Large Language Models (LLMs) secure, controlled access to tools and data sources.
-Each MCP server is implemented with either the [Typescript MCP SDK](https://github.com/modelcontextprotocol/typescript-sdk) or [Python MCP SDK](https://github.com/modelcontextprotocol/python-sdk).
+## 🚀 Current Servers
 
+1. **nodes**: 
+   - Retrieves YouTube transcripts using an MCP tool.
+   - *(Note: The name "nodes" could not be changed.)*
 
-
-## 🤝 Third-Party Servers
-
-### 🎖️ Official Integrations
-
-Official integrations are maintained by companies building production ready MCP servers for their platforms.
-
-- <img height="12" width="12" src="https://browserbase.com/favicon.ico" alt="Browserbase Logo" /> **[Browserbase](https://github.com/browserbase/mcp-server-browserbase)** - Automate browser interactions in the cloud (e.g. web navigation, data extraction, form filling, and more)
-- <img height="12" width="12" src="https://cdn.simpleicons.org/cloudflare" /> **[Cloudflare](https://github.com/cloudflare/mcp-server-cloudflare)** - Deploy, configure & interrogate your resources on the Cloudflare developer platform (e.g. Workers/KV/R2/D1)
-- **[Raygun](https://github.com/MindscapeHQ/mcp-server-raygun)** - Interact with your crash reporting and real using monitoring data on your Raygun account
-- <img height="12" width="12" src="https://e2b.dev/favicon.ico" alt="E2B Logo" /> **[E2B](https://github.com/e2b-dev/mcp-server)** - Run code in secure sandboxes hosted by [E2B](https://e2b.dev)
-- **[Neon](https://github.com/neondatabase/mcp-server-neon)** - Interact with the Neon serverless Postgres platform
-- <img height="12" width="12" src="https://www.tinybird.co/favicon.ico" alt="Tinybird Logo" /> **[Tinybird](https://github.com/tinybirdco/mcp-tinybird)** - Interact with Tinybird serverless ClickHouse platform
-- <img height="12" width="12" src="https://pics.fatwang2.com/56912e614b35093426c515860f9f2234.svg" /> [Search1API](https://github.com/fatwang2/search1api-mcp) - One API for Search, Crawling, and Sitemaps
-- <img height="12" width="12" src="https://qdrant.tech/img/brand-resources-logos/logomark.svg" /> **[Qdrant](https://github.com/qdrant/mcp-server-qdrant/)** - Implement semantic memory layer on top of the Qdrant vector search engine
-
+2. **s3**: 
+   - Integrates with cloud S3 buckets.
+   - Provides functionality to get, put, and manage objects and buckets.
 
 ## 📚 Resources
 
-Additional resources on MCP.
-
-- **[Awesome MCP Servers by punkpeye](https://github.com/punkpeye/awesome-mcp-servers)** - A curated list of MCP servers by **[Frank Fiegel](https://github.com/punkpeye)**
-- **[Awesome MCP Servers by wong2](https://github.com/wong2/awesome-mcp-servers)** - A curated list of MCP servers by **[wong2](https://github.com/wong2)**
-- **[Awesome MCP Servers by appcypher](https://github.com/appcypher/awesome-mcp-servers)** - A curated list of MCP servers by **[Stephen Akinyemi](https://github.com/appcypher)**
-- **[mcp-get](https://mcp-get.com)** - Command line tool for installing and managing MCP servers by **[Michael Latman](https://github.com/michaellatman)**
-- **[mcp-cli](https://github.com/wong2/mcp-cli)** - A CLI inspector for the Model Context Protocol by **[wong2](https://github.com/wong2)**
-
-## 🚀 Getting Started
-
-### Using MCP Servers in this Repository
-Typescript-based servers in this repository can be used directly with `npx`.
-
-For example, this will start the [Memory](src/memory) server:
-```sh
-npx -y @modelcontextprotocol/server-memory
-```
-
-Python-based servers in this repository can be used directly with [`uvx`](https://docs.astral.sh/uv/concepts/tools/) or [`pip`](https://pypi.org/project/pip/). `uvx` is recommended for ease of use and setup.
-
-For example, this will start the [Git](src/git) server:
-```sh
-# With uvx
-uvx mcp-server-git
-
-# With pip
-pip install mcp-server-git
-python -m mcp_server_git
-```
-
-Follow [these](https://docs.astral.sh/uv/getting-started/installation/) instructions to install `uv` / `uvx` and [these](https://pip.pypa.io/en/stable/installation/) to install `pip`.
+Expand your understanding of MCP and access additional materials:  
+[Model Context Protocol - Servers](https://github.com/modelcontextprotocol/servers/tree/main)
 
 ## 🛠️ Creating Your Own Server
 
-Interested in creating your own MCP server? Visit the official documentation at [modelcontextprotocol.io](https://modelcontextprotocol.io/introduction) for comprehensive guides, best practices, and technical details on implementing MCP servers.
+Want to build your own MCP server? Check out the official documentation for comprehensive guides, best practices, and technical details:  
+[Model Context Protocol Documentation](https://modelcontextprotocol.io/introduction)
 
 ## 🤝 Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for information about contributing to this repository.
+We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to get involved.
 
 ## 🔒 Security
 
-See [SECURITY.md](SECURITY.md) for reporting security vulnerabilities.
+For details on reporting security vulnerabilities, refer to [SECURITY.md](SECURITY.md).
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open-source and licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
 
 ## 💬 Community
 
-- [GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
+Join the discussion and connect with others in the community:  
+[GitHub Discussions](https://github.com/orgs/modelcontextprotocol/discussions)
 
 ## ⭐ Support
 
-If you find MCP servers useful, please consider starring the repository and contributing new servers or improvements!
+If you find MCP servers useful, consider starring the repository. Contributions such as new servers, feature enhancements, or bug fixes are always appreciated!
 
 ---
 
-Managed by Anthropic, but built together with the community. The Model Context Protocol is open source and we encourage everyone to contribute their own servers and improvements!
+Managed by **Anthropic**, but built collaboratively with the community. The **Model Context Protocol** is open-source, and we encourage everyone to contribute servers, tools, and improvements!
