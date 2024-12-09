@@ -1,14 +1,8 @@
 # notes MCP server
+This project provides an extensible MCP (Modular Content Processing) server framework that enables the management of textual content and facilitates interactions with tools for text manipulation, organization, and integration with external services like YouTube. Below is an overview of the server's functionality and its available tools.
 
-just a test mcp server 
-
-## Components
-
-### Resources
-
-The server implements a simple note storage system with:
-- Custom note:// URI scheme for accessing individual notes
-- Each note resource has a name, description and text/plain mimetype
+# Server Overview
+The MCP server is designed to manage content effectively using a set of tools. These tools are modular and follow JSON Schema validation for inputs, ensuring easy integration and extensibility. The core functionality includes creating, modifying, and analyzing textual content and interfacing with third-party APIs for additional insights.
 
 ### Prompts
 
@@ -18,19 +12,38 @@ The server provides a single prompt:
   - Generates prompt combining all current notes with style preference
 
 ### Tools
+1. Add Note
+```bash
+Purpose: Create a new note with a specified name and content.
 
-The server implements one tool:
-- add-note: Adds a new note to the server
-  - Takes "name" and "content" as required string arguments
-  - Updates server state and notifies clients of resource changes
+Input:
+
+name: Name of the note (string, required).
+content: Text content of the note (string, required).
+Behavior: The server saves the note and notifies clients of the new resource.
+```
+
+2. Randomize Note
+```bash
+Purpose: Generate a randomized version of an existing note. Also, to test custom server tools. 
+Input:
+
+note_name: Name of the note to randomize (string, required).
+randomization_type: The type of randomization to apply (string, required).
+Options: "shuffle", "reverse", "uppercase", "lowercase".
+```
+
+3. Get YouTube Transcript
+```bash
+Purpose: Fetch the transcript of a YouTube video. Test mcp server to work with python packages/libraries. 
+
+Input:
+video_id: YouTube video ID (string, required).
+```
 
 ## Configuration
 
-[TODO: Add configuration details specific to your implementation]
-
-## Quickstart
-
-### Install
+Download the necessary libraries and add them to the project ".venv\Lib\site-packages" folder. However, you can now download the new mcp server youtube-transcript online. I think it is good practice to make your own server and work with a python environment and packages. 
 
 #### Claude Desktop
 
@@ -67,33 +80,6 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
   }
   ```
 </details>
-
-## Development
-
-### Building and Publishing
-
-To prepare the package for distribution:
-
-1. Sync dependencies and update lockfile:
-```bash
-uv sync
-```
-
-2. Build package distributions:
-```bash
-uv build
-```
-
-This will create source and wheel distributions in the `dist/` directory.
-
-3. Publish to PyPI:
-```bash
-uv publish
-```
-
-Note: You'll need to set PyPI credentials via environment variables or command flags:
-- Token: `--token` or `UV_PUBLISH_TOKEN`
-- Or username/password: `--username`/`UV_PUBLISH_USERNAME` and `--password`/`UV_PUBLISH_PASSWORD`
 
 ### Debugging
 
