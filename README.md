@@ -4,11 +4,11 @@ Welcome to the **Model Context Protocol (MCP) Servers** repository! This project
 
 ## 🚀 Current Servers
 
-1. **nodes**: 
+1. **[nodes](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/notes)**: 
    - Retrieves YouTube transcripts using an MCP tool.
    - *(Note: The name "nodes" could not be changed.)*
 
-2. **s3**: 
+2. **[s3](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/s3)**: 
    - Integrates with cloud S3 buckets.
    - Provides functionality to get, put, and manage objects and buckets.
 
