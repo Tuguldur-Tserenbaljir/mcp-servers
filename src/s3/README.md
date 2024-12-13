@@ -41,7 +41,18 @@ The tool provides versatile prompts to help users explore and understand their M
 
 ## Configuration
 
+In theory, it should work on any website or docker container that is minIO. My workflow is like:
 
+1) Download and launch the MinIO container on docker. The guide I followed:
+https://github.com/minio/minio/blob/master/docs/docker/README.md
+
+2) Create the access and secret key. (Best to have some test buckets and objects)
+
+3) Add the keys to claude_desktop_config.json
+
+4) Run server.py and add necessary packages to the .venv/Lib/site-packages . 
+
+5) Happy testing! If the MCP server works well with MinIO, it validates the theory that it will also be compatible with other cloud platforms that support buckets and objects.
 
 #### Claude Desktop
 
