@@ -13,12 +13,13 @@ Welcome to the **Model Context Protocol (MCP) Servers** repository! This project
    - Provides functionality to get, put, and manage objects and buckets.
 
 3. **[Scout](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/Scout)**: 
-   - Uses OpenAI API to web scrape. Named the mcp server Scout because it is scouting the web. 
-   - *(Note: The name "nodes" could not be changed.)*
+   - Uses OpenAI API to web scrape. Named the mcp server Scout because it is scouting the web.
+   - Be careful when setting up the .venv environment
 
 4. **[Son](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/Son)**: 
-   - Qdrant container on docker testing the mcp qdrant server's write/delete/list/read collection tools 
-   - Provides functionality to get, put, and manage objects and buckets.
+   - Qdrant container on docker 
+   - Testing the MCP qdrant server's write/delete/list/read collection tools
+   - Be careful when setting up the .venv environment
 
 
 ## 📚 Resources
