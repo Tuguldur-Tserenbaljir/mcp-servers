@@ -1,0 +1,22 @@
+[project]
+name = "son"
+version = "0.1.0"
+description = "qdrant testing "
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.1.2",
+    "numpy>=1.26.0",
+    "qdrant-client>=1.4.0",
+    "pywin32>=308" 
+]
+[[project.authors]]
+name = "Tuguldur Tserenbaljir"
+email = "btuudo@gmail.com"
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project.scripts]
+son = "son:main"
