@@ -1,8 +1,16 @@
 # Scout MCP server
 
-Scout and searches on the web
+Scout is an advanced, modular server built using the MCP framework, designed for seamless integration with OpenAI's API. It offers web scraping functionality alongside state management for search results and notes. With Scout, you can perform web searches, store results, and interact with the data using a user-friendly prompt and tool system.
 
-## Components
+
+### Server Overview
+Scout is built on the MCP Server framework, providing a robust infrastructure for handling resources, tools, and prompts. It features:
+
+- Web Scraping: Performs searches via OpenAI's API and stores results for further analysis.
+- State Management: Uses key-value dictionaries for managing notes and search results.
+- Extensibility: Supports custom prompts and tools to adapt to diverse application needs.
+  
+The server is configured to use OpenAI's GPT models, ensuring powerful and accurate natural language interactions.
 
 ### Resources
 
@@ -19,18 +27,24 @@ The server provides a single prompt:
 
 ### Tools
 
-The server implements one tool:
-- add-note: Adds a new note to the server
-  - Takes "name" and "content" as required string arguments
-  - Updates server state and notifies clients of resource changes
+1. web-search
+```bash
+Purpose: Perform web searches using OpenAI’s API with the following parameters.
+
+Input:
+
+query: The search query string (required).
+name: A unique identifier for saving the search result (required).
+max_results: Maximum number of search results to return (default: 5, range: 1-10).
+```
 
 ## Configuration
 
-[TODO: Add configuration details specific to your implementation]
+The server relies on a JSON-based configuration file to retrieve OpenAI credentials and settings. Ensure that the configuration file includes:
 
-## Quickstart
-
-### Install
+- OPENAI_API_KEY: Your OpenAI API key.
+- OPENAI_MODEL: The OpenAI model to use (defaults to gpt-4 if not specified).
+- Need to import neccessary libraries to .venv\Lib\site-packages
 
 #### Claude Desktop
 
@@ -67,33 +81,6 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
   }
   ```
 </details>
-
-## Development
-
-### Building and Publishing
-
-To prepare the package for distribution:
-
-1. Sync dependencies and update lockfile:
-```bash
-uv sync
-```
-
-2. Build package distributions:
-```bash
-uv build
-```
-
-This will create source and wheel distributions in the `dist/` directory.
-
-3. Publish to PyPI:
-```bash
-uv publish
-```
-
-Note: You'll need to set PyPI credentials via environment variables or command flags:
-- Token: `--token` or `UV_PUBLISH_TOKEN`
-- Or username/password: `--username`/`UV_PUBLISH_USERNAME` and `--password`/`UV_PUBLISH_PASSWORD`
 
 ### Debugging
 
