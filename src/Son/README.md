@@ -1,36 +1,73 @@
 # Son MCP server
 
-qdrant testing 
+Son is an efficient and versatile server designed to interface with Qdrant, a high-performance vector database optimized for neural search applications. This server leverages the Message Communication Protocol (MCP) framework to facilitate seamless management and exploration of vector collections in Qdrant.
 
-## Components
+
+### Server Overview
+Son offers a robust set of tools and prompts to streamline operations on Qdrant collections, including creating, reading, deleting, and listing collections. By leveraging MCP's capabilities, Scout ensures efficient state management and supports advanced vector database workflows.
+
+Key features:
+  
+- Collection Management: Create, read, delete, and list Qdrant collections effortlessly.
+- Custom Prompts: Interactive prompts for managing and analyzing vector collections.
+- Tool Support: Tools designed for intuitive interaction with Qdrant's vector collections.
+- MCP Compatibility: Full integration with MCP for stateful operations and efficient resource handling.
+  
+Son is built using Python and integrates with the QdrantClient library for interacting with Qdrant instances.
 
 ### Resources
 
-The server implements a simple note storage system with:
-- Custom note:// URI scheme for accessing individual notes
-- Each note resource has a name, description and text/plain mimetype
+This Qdrant MCP server implementation leverages the following libraries and frameworks:
+
+- [Qdrant](https://qdrant.tech/): A high-performance vector database for storing and searching through vector embeddings. The server interacts with Qdrant using the qdrant-client Python library.
+  
+- [MCP Framework](https://www.anthropic.com/news/model-context-protocol): Provides the structure for implementing the server, including tools, prompts, and resource management. (Replace with the actual URL if applicable.)
+  
+- [Pydantic](https://docs.pydantic.dev/latest/): Used for data validation and management, especially for defining the schema of resources, tools, and prompts.
+  
+- [Python Asyncio](https://www.geeksforgeeks.org/asyncio-in-python/): Supports asynchronous operations for efficient server handling and interaction with Qdrant.
+  
+- [JSON](https://www.w3schools.com/js/js_json_intro.asp): For structuring data and communicating with the server and Qdrant API.
 
 ### Prompts
+Son supports a qdrant-system prompt, enabling users to manage and analyze Qdrant collections interactively.
 
-The server provides a single prompt:
-- summarize-notes: Creates summaries of all stored notes
-  - Optional "style" argument to control detail level (brief/detailed)
-  - Generates prompt combining all current notes with style preference
+- action (required): The action to perform (create, read, delete, or analyze).
+- collection_name (required): The name of the collection to manage.
+- detail_level (optional): Level of detail for analysis (brief or detailed).
 
 ### Tools
+Son provides a range of tools to interact with Qdrant's vector collections. Each tool is designed to perform a specific task, as described below:
 
-The server implements one tool:
-- add-note: Adds a new note to the server
-  - Takes "name" and "content" as required string arguments
-  - Updates server state and notifies clients of resource changes
+1. qdrant-write-collection
+```bash
+Purpose: Create a new Qdrant collection.
 
-## Configuration
+- collection_name (string, required): The name of the new collection.
+- vector_size (integer, optional): The size of vectors in the collection (default: 384).
+- distance (string, optional): The distance metric (Cosine, Euclidean, or Dot; default: Cosine).
 
-[TODO: Add configuration details specific to your implementation]
+```
 
-## Quickstart
+2. qdrant-read-collection
+```bash
+Purpose: Description: Retrieve information about a specific Qdrant collection.
 
-### Install
+- collection_name (string, required): The name of the collection.
+```
+
+3. qdrant-delete-collection
+```bash
+Purpose: Description: Delete an existing Qdrant collection.
+
+- collection_name (string, required): The name of the collection to delete.
+```
+
+4. qdrant-list-collections
+```bash
+Purpose: Description: List all available Qdrant collections.
+
+```
 
 #### Claude Desktop
 
@@ -68,32 +105,6 @@ On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
   ```
 </details>
 
-## Development
-
-### Building and Publishing
-
-To prepare the package for distribution:
-
-1. Sync dependencies and update lockfile:
-```bash
-uv sync
-```
-
-2. Build package distributions:
-```bash
-uv build
-```
-
-This will create source and wheel distributions in the `dist/` directory.
-
-3. Publish to PyPI:
-```bash
-uv publish
-```
-
-Note: You'll need to set PyPI credentials via environment variables or command flags:
-- Token: `--token` or `UV_PUBLISH_TOKEN`
-- Or username/password: `--username`/`UV_PUBLISH_USERNAME` and `--password`/`UV_PUBLISH_PASSWORD`
 
 ### Debugging
 
