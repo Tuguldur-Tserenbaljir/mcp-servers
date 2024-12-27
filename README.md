@@ -20,12 +20,12 @@ Welcome to the **Model Context Protocol (MCP) Servers** repository! This project
    - Qdrant container on docker 
    - Testing the MCP qdrant server's write/delete/list/read collection tools
    - Be careful when setting up the .venv environment
-
-5.**[docker-mcp](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/docker-mcp)**: 
-   -Can list containers on docker
-   -Can get the log of a container on docker
-   -Can create a container with image and volume
-   -Can compose docker 
+     
+4. **[docker-mcp](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/docker-mcp)**: 
+   - Can list containers on docker
+   - Can get the log of a container on docker
+   - Can create a container with image and volume
+   - Can compose docker 
 
 ## 📚 Resources
 
