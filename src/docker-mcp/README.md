@@ -45,10 +45,14 @@ To try this in Claude Desktop app, add this to your claude config files:
 ```json
 {
   "mcpServers": {
-    "docker-mcp": {
-      "command": "uvx",
+        "docker-mcp": {
+      "command": "uv",
       "args": [
-        "docker-mcp"
+        "--directory",
+        "C:\\Users\\btuud\\docker-mcp",
+        "run",
+        "docker-mcp",
+        "C:\\Users\\btuud\\AppData\\Local\\Docker"
       ]
     }
   }
