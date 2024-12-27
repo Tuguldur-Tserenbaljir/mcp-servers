@@ -7,6 +7,15 @@
 
 A powerful Model Context Protocol (MCP) server for Docker operations, enabling seamless container and compose stack management through Claude AI.
 
+## :innocent: Current Version
+1) Can create a single container with the image without volume.
+2) List container
+3) Can get container logs
+
+## :thinking: Things to-do/add
+1) Debug deploy-compose command
+2) Add volume creation 
+
 ## ✨ Features
 
 - 🚀 Container creation and instantiation
