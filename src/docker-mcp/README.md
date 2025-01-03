@@ -7,22 +7,6 @@
 
 A powerful Model Context Protocol (MCP) server for Docker operations, enabling seamless container and compose stack management through Claude AI.
 
-## :innocent: Current Version
-1) Can create a single container with the image without volume.
-2) List container
-3) Can get container logs
-
-## :thinking: Things to-do/add
-1) Debug deploy-compose command
-2) Add volume creation 
-
-## ✨ Features
-
-- 🚀 Container creation and instantiation
-- 📦 Docker Compose stack deployment
-- 🔍 Container logs retrieval
-- 📊 Container listing and status monitoring
-
 ### 🎬 Demos
 #### Deploying a Docker Compose Stack
 
@@ -151,43 +135,39 @@ npx @modelcontextprotocol/inspector uv --directory <path-to-docker-mcp> run dock
 
 The Inspector will provide a URL to access the debugging interface.
 
-## 📝 Available Tools
+# 🔨 Tools
 
-The server provides the following tools:
+### Containers
 
-### create-container
-Creates a standalone Docker container
-```json
-{
-    "image": "image-name",
-    "name": "container-name",
-    "ports": {"80": "80"},
-    "environment": {"ENV_VAR": "value"}
-}
-```
+- `list_containers`
+- `create_container`
+- `run_container`
+- `recreate_container`
+- `start_container`
+- `fetch_container_logs`
+- `stop_container`
+- `remove_container`
 
-### deploy-compose
-Deploys a Docker Compose stack
-```json
-{
-    "project_name": "example-stack",
-    "compose_yaml": "version: '3.8'\nservices:\n  service1:\n    image: image1:latest\n    ports:\n      - '8080:80'"
-}
-```
+### Images
 
-### get-logs
-Retrieves logs from a specific container
-```json
-{
-    "container_name": "my-container"
-}
-```
+- `list_images`
+- `pull_image`
+- `push_image`
+- `build_image`
+- `remove_image`
 
-### list-containers
-Lists all Docker containers
-```json
-{}
-```
+### Networks
+
+- `list_networks`
+- `create_network`
+- `remove_network`
+
+### Volumes
+
+- `list_volumes`
+- `create_volume`
+- `remove_volume`
+
 
 ## 🚧 Current Limitations
 
