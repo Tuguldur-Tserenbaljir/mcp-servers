@@ -1,6 +1,6 @@
 # 🐋 Docker MCP server
 
-An MCP server for managing Docker with natural language! Docker Desktop must be open inorder to run succesfully. 
+An MCP server for managing Docker with natural language! Docker Desktop must be open in order to run successfully. 
 
 ## 🪩 What can it do?
 
