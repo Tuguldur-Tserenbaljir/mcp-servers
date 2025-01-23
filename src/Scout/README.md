@@ -12,19 +12,6 @@ Scout is built on the MCP Server framework, providing a robust infrastructure fo
   
 The server is configured to use OpenAI's GPT models, ensuring powerful and accurate natural language interactions.
 
-### Resources
-
-The server implements a simple note storage system with:
-- Custom note:// URI scheme for accessing individual notes
-- Each note resource has a name, description and text/plain mimetype
-
-### Prompts
-
-The server provides a single prompt:
-- summarize-notes: Creates summaries of all stored notes
-  - Optional "style" argument to control detail level (brief/detailed)
-  - Generates prompt combining all current notes with style preference
-
 ### Tools
 
 1. web-search
