@@ -21,11 +21,17 @@ Welcome to the **Model Context Protocol (MCP) Servers** repository! This project
    - Testing the MCP qdrant server's write/delete/list/read collection tools
    - Be careful when setting up the .venv environment
      
-4. **[docker-mcp](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/mcp-server-docker)**: 
+5. **[docker-mcp](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/mcp-server-docker)**: 
    - Can list containers on docker
    - Can get the log of a container on docker
    - Can create a container with image and volume
    - Can compose docker 
+
+6. **[langflow](https://github.com/Tuguldur-Tserenbaljir/mcp-servers/tree/main/src/langflow)**: 
+   - Can list flows with name and ID, given the langflow URL
+   - Can create/delete flows with ID 
+   - Can upload components to saved tools on langflow
+   - Can directly upload components to flow given the id
 
 ## 📚 Resources
 
