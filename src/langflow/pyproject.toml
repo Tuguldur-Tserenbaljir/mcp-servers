@@ -1,0 +1,17 @@
+[project]
+name = "langflow"
+version = "0.1.0"
+description = "mcp tools working with langflow"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [ "mcp>=1.2.0",]
+[[project.authors]]
+name = "Tuguldur Tserenbaljir"
+email = "btuudo@gmail.com"
+
+[build-system]
+requires = [ "hatchling",]
+build-backend = "hatchling.build"
+
+[project.scripts]
+langflow = "langflow:main"
